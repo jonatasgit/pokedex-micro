@@ -1,6 +1,6 @@
 # Protótipo pokedex-micro
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+https://www.figma.com/file/ONLb591eGFliA3x9QrUroM/UTFPR---Angular-Frameworks?node-id=0%3A1
 
 # Checklist
 
