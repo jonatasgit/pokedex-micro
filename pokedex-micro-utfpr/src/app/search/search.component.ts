@@ -15,9 +15,10 @@ import { PokemonSearchService } from './pokemon-search.service';
 })
 export class SearchComponent implements OnInit {
 
-  myControl = new FormControl();
+  searchForm = new FormControl();
   options: PokemonSearch[] = [{name: 'Pikachu', url: "tst.com"}, {name: 'Bullbassaur', url: "tst.com"}];
   filteredOptions: Observable<PokemonSearch[]> | undefined;
+  pokemonSelected: PokemonSearch | undefined;
 
   constructor(private searchService: PokemonSearchService){
   }
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit {
       this.options = res.results;
     });
 
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.searchForm.valueChanges.pipe(
       startWith(''),
       map(value => (typeof value === 'string' ? value : value.name)),
       map(name => (name ? this._filter(name) : this.options.slice())),
@@ -41,6 +42,11 @@ export class SearchComponent implements OnInit {
     const filterValue = name.toLowerCase();
 
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
+  }
+
+  onSelectPokemon(event: PokemonSearch){    
+    alert(event.name);  
+    this.pokemonSelected = event;      
   }
 
 }

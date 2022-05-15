@@ -1,12 +1,15 @@
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Escolha o Pokémon</mat-label>
-        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+<form class="form-search">
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Busque o Pokémon desejado:</mat-label>
+        <input type="text" matInput [formControl]="searchForm" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+            (optionSelected)='onSelectPokemon($event.option.value)'>
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                 {{option.name}}
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
+
+    <span>Pokemon Escolhido: {{ pokemonSelected?.name }} </span>
     
 </form>
