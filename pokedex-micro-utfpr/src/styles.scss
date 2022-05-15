@@ -1,4 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$theming-material-components-primary: mat-palette($mat-red, A400);
+$theming-material-components-accent: mat-palette($mat-yellow, A400);
+$theming-material-components-warn: mat-palette($mat-red);
+
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn
+);
+
+
+@include angular-material-theme($theming-material-components-theme);
+
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
