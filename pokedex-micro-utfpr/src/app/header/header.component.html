@@ -2,10 +2,15 @@
 <p>
     <mat-toolbar class="nav-header-material" color="primary">
         <span class="nav-header-spacer">
-            <img src="../../assets/images/pokemon.png" alt="Pokemon">
+            <a [routerLink]="['']">
+                <img src="../../assets/images/pokemon.png" alt="Pokemon">
+            </a>
+            
         </span>
         <span>
-            <img src="../../assets/images/pokedex.png" alt="Pokedex">
+            <a [routerLink]="['/pokedex']">
+                <img src="../../assets/images/pokedex.png" alt="Pokedex">
+            </a>            
         </span>
     </mat-toolbar>
 </p>
