@@ -9,7 +9,9 @@
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
-
     <app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
+    <div *ngIf="pokemonSelected">
+        <a [routerLink]="['pokemon', pokemonSelected]">Detalhes do Pokémon escolhido</a>
+    </div>
     
 </form>
