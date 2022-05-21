@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule } from '@angular/material/input';
+import { PokedexComponent } from './pokedex/pokedex.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatInputModule } from '@angular/material/input';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    PokedexComponent
   ],
   imports: [
     BrowserModule,
