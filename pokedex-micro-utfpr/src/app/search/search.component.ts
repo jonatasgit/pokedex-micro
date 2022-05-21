@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
   searchForm = new FormControl();
   options: PokemonSearch[] = [{name: 'Pikachu', url: "tst.com"}, {name: 'Bullbassaur', url: "tst.com"}];
   filteredOptions: Observable<PokemonSearch[]> | undefined;
-  pokemonSelected: PokemonSearch | undefined;
+  pokemonSelected:string = '';  
 
   constructor(private searchService: PokemonSearchService){
   }
@@ -45,8 +45,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSelectPokemon(event: PokemonSearch){    
-    alert(event.name);  
-    this.pokemonSelected = event;      
+    this.pokemonSelected = event.name;     
   }
 
 }
