@@ -19,6 +19,7 @@ export class SearchComponent implements OnInit {
   options: PokemonSearch[] = [{name: 'Pikachu', url: "tst.com"}, {name: 'Bullbassaur', url: "tst.com"}];
   filteredOptions: Observable<PokemonSearch[]> | undefined;
   pokemonSelected:string = '';  
+  validSearch: boolean = false;
 
   constructor(private searchService: PokemonSearchService){
   }
@@ -46,6 +47,17 @@ export class SearchComponent implements OnInit {
 
   onSelectPokemon(event: PokemonSearch){    
     this.pokemonSelected = event.name;     
+  }
+  
+  onChangeSearchInput(eventName: Event){
+    let name = (eventName.target as HTMLInputElement).value;
+    console.log(name);
+    var regex = "^[a-z ,.'-]+$";
+    if (name.match(regex)){
+      alert('O campo de busca está válido!');
+      this.validSearch = true;
+    } 
+    else alert('O campo de busca está inválido!')
   }
 
 }

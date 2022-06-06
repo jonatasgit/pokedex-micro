@@ -1,7 +1,7 @@
 <form class="form-search">
     <mat-form-field class="full-width" appearance="fill">
         <mat-label>Busque o Pokémon desejado:</mat-label>
-        <input type="text" matInput [formControl]="searchForm" [matAutocomplete]="auto">
+        <input type="text" matInput [formControl]="searchForm" [matAutocomplete]="auto" (change)="onChangeSearchInput($event)">
         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
             (optionSelected)='onSelectPokemon($event.option.value)'>
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
@@ -14,4 +14,5 @@
         <a [routerLink]="['pokemon', pokemonSelected]">Detalhes do Pokémon escolhido</a>
     </div>
     
+    <button [disabled]="!validSearch" type="submit">Adicionar</button>
 </form>
