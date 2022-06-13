@@ -1,0 +1,12 @@
+{
+    "pokemons": [
+    {
+        "name": "charmeleon",
+        "weight": 68
+    },
+    {
+        "name": "pikachu",
+        "weight": 69
+    }
+    ]
+}
