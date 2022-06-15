@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
 
   searchForm = new FormControl();
   options: PokemonSearch[] = [{name: 'Pikachu', url: "tst.com"}, {name: 'Bullbassaur', url: "tst.com"}];
-  filteredOptions: Observable<PokemonSearch[]> | undefined;
+  filteredOptions: Observable<PokemonSearch[]> | undefined; //ENFASE OBSERVABLE
   pokemonSelected:string = '';  
   validSearch: boolean = false;
 
