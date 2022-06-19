@@ -32,7 +32,22 @@ export class PokemonCardComponent implements OnInit {
           console.log(`Erro ao obter ` + this.id);
           
         })
+    
+  }
 
+  ngOnChanges(changes: any){
+    if(this.pokemonSelected != ''){
+      this.pokemonCardService
+        .getPokemonByName(this.pokemonSelected)
+        .then(res =>{
+            this.pokemon = res;
+        })
+        .catch((e) => {
+          //erro ao obter pokemon
+          console.log(`Erro ao obter ` + this.id);
+          
+        })
+    }
   }
 
 }

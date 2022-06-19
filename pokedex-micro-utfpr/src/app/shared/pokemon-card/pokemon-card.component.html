@@ -1,7 +1,16 @@
-<p>pokemon-card</p>
-<!-- ENFASE NGIF -->
-<span *ngIf="pokemonSelected"> Pokemon escolhido: {{ pokemonSelected }}</span> 
-<br>
+<div class="poke-card" *ngIf="pokemon">
+    <span class="number">#{{ pokemon?.order }}</span>
 
-Nome: {{ pokemon?.name }} <br>
-Peso: {{ pokemon?.weight}}
+    <img class="img-container" [src]="pokemon?.sprites?.front_default" alt="">
+
+    <span class="name"> {{ pokemon?.name }}</span>
+    <div class="stats" *ngIf="pokemon" >
+        <span>Tipo: {{ pokemon.types[0].type.name }}</span> 
+        <span>Peso: {{ pokemon?.weight}}</span> 
+        <div *ngFor="let data of pokemon.stats">   
+           <span>{{ data.stat.name }} : {{ data.base_stat }}</span> 
+        </div> 
+        
+    </div>
+
+</div>
