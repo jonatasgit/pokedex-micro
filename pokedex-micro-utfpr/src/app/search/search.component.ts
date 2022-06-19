@@ -16,7 +16,7 @@ import { PokemonSearchService } from './pokemon-search.service';
 export class SearchComponent implements OnInit {
 
   searchForm = new FormControl();
-  options: PokemonSearch[] = [{name: 'pikachu', url: "tst.com"}, {name: 'bulbasaur', url: "tst.com"}];
+  options: PokemonSearch[] = [];
   filteredOptions: Observable<PokemonSearch[]> | undefined; //ENFASE OBSERVABLE
   pokemonSelected:string = '';  
   validSearch: boolean = false;
@@ -53,7 +53,7 @@ export class SearchComponent implements OnInit {
     let name = (eventName.target as HTMLInputElement).value;
     console.log(name);
     var regex = "^[a-z ,.'-]+$";
-    if (name.match(regex)){
+    if (name == '' || name.match(regex)){
       this.validSearch = true;
     } 
     else alert('O campo de busca está inválido!')
