@@ -1,20 +1,21 @@
 export interface Pokemon{
-    order: bigint
-    name: string
-    weight: bigint
+    order: number
+    name: number
+    weight: number
+    base_experience: number
     sprites: {
         front_default: string
     }
     types: [
         {
-            slot: bigint, type: {
+            slot: number, type: {
                 name: string
             }
         }
     ]
     stats: [
         {
-            base_stat: bigint, 
+            base_stat: number, 
             stat: {
                 name: string
             }

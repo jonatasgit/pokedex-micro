@@ -5,10 +5,11 @@
 
     <span class="name"> {{ pokemon?.name }}</span>
     <div class="stats" *ngIf="pokemon" >
-        <span>Tipo: {{ pokemon.types[0].type.name }}</span> 
-        <span>Peso: {{ pokemon?.weight}}</span> 
+        <span>Tipo: <b>{{ pokemon.types[0].type.name }}</b></span> 
+        <span>Peso: <b>{{ pokemon?.weight}}</b></span> 
+        <span>Raridade: <b>{{ pokemon.base_experience | currency: "BRL"}}</b></span>
         <div *ngFor="let data of pokemon.stats">   
-           <span>{{ data.stat.name }} : {{ data.base_stat }}</span> 
+           <span>{{ data.stat.name }} : <b>{{ data.base_stat }}</b></span> 
         </div> 
         
     </div>
