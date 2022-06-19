@@ -10,9 +10,9 @@
         </mat-autocomplete>
     </mat-form-field>
     <app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
-    <div *ngIf="pokemonSelected">
+    <!-- <div *ngIf="pokemonSelected">
         <a [routerLink]="['pokemon', pokemonSelected]">Detalhes do Pokémon escolhido</a>
-    </div>
+    </div> -->
     
     <button [disabled]="!validSearch" type="submit">Adicionar</button>
 </form>
