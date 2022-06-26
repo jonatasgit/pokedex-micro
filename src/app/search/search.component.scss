@@ -10,3 +10,10 @@
 .full-width {
     width: 100%;
 }
+
+#buttonAdd{
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}

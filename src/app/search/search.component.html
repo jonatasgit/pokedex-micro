@@ -9,13 +9,24 @@
             </mat-option>
         </mat-autocomplete>
     </mat-form-field>
-    <app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
-    <!-- <div *ngIf="pokemonSelected">
+
+    <mat-grid-list cols="1" rowHeight="1:1" *ngIf="pokemonSelected">
+        <mat-grid-tile>
+            <app-pokemon-card [pokemonSelected]="pokemonSelected"></app-pokemon-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!-- <div >
         <a [routerLink]="['pokemon', pokemonSelected]">Detalhes do Pokémon escolhido</a>
     </div> -->
-    
-    <button mat-raised-button color="primary" 
+    <mat-grid-list cols="1" rowHeight="6:1" >
+        <mat-grid-tile>
+            <button mat-raised-button color="primary" 
             [disabled]="!validSearch" 
             type="submit" 
+            id="buttonAdd"
             (click)="onClickAddPokemon(pokemonSelected)">Adicionar</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+    
+   
 </form>
