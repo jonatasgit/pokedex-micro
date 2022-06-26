@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokedexDataService } from '../shared/pokedex/pokedex-data.service';
 
 @Component({
   selector: 'app-pokedex',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokedexComponent implements OnInit {
 
-  constructor() { }
+  pokedexData: string[] = [];
+
+  constructor(private pokedexDataService: PokedexDataService) { }
 
   ngOnInit(): void {
+    this.pokedexData = this.pokedexDataService.getPokemons();
   }
 
 }

@@ -1,1 +1,5 @@
-<p>pokedex works!</p>
+<mat-grid-list cols="4" rowHeight="2:3" >
+    <mat-grid-tile *ngFor="let pokemon of pokedexData">
+        <app-pokemon-card [pokemonSelected]="pokemon"></app-pokemon-card>
+    </mat-grid-tile>
+</mat-grid-list>

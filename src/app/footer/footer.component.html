@@ -1,2 +1,8 @@
 <mat-toolbar class="nav-header" color="primary">
+    <mat-chip-list class="chips" aria-label="Minha Pokedex" *ngFor="let pokemon of pokedexData">
+        <mat-chip>
+          <img matChipAvatar src="https://pm1.narvii.com/6716/b00dbdc33927df0bf19c372481c44baa5e263f29_hq.jpg" alt="Photo of a Shiba Inu"/>
+          {{ pokemon }}
+        </mat-chip>
+      </mat-chip-list>
 </mat-toolbar>

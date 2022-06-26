@@ -15,11 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 
 @NgModule({
@@ -43,7 +48,11 @@ import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.compone
     MatAutocompleteModule,
     MatFormFieldModule,
     ReactiveFormsModule,    
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

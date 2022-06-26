@@ -14,5 +14,8 @@
         <a [routerLink]="['pokemon', pokemonSelected]">Detalhes do Pokémon escolhido</a>
     </div> -->
     
-    <button [disabled]="!validSearch" type="submit">Adicionar</button>
+    <button mat-raised-button color="primary" 
+            [disabled]="!validSearch" 
+            type="submit" 
+            (click)="onClickAddPokemon(pokemonSelected)">Adicionar</button>
 </form>

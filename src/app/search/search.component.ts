@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Observable } from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { PokemonSearch } from '../models/pokemon-search';
+import { PokedexDataService } from '../shared/pokedex/pokedex-data.service';
 import { PokemonSearchService } from './pokemon-search.service';
 
 
@@ -20,8 +22,11 @@ export class SearchComponent implements OnInit {
   filteredOptions: Observable<PokemonSearch[]> | undefined; //ENFASE OBSERVABLE
   pokemonSelected:string = '';  
   validSearch: boolean = false;
+  pokedexData: string[] = [];
 
-  constructor(private searchService: PokemonSearchService){
+  constructor(private searchService: PokemonSearchService,
+              private pokedexDataService: PokedexDataService,
+              private _snackBar: MatSnackBar){
   }
   ngOnInit() {
     this.searchService.getAllPokemons().subscribe(res => {
@@ -33,6 +38,9 @@ export class SearchComponent implements OnInit {
       map(value => (typeof value === 'string' ? value : value.name)),
       map(name => (name ? this._filter(name) : this.options.slice())),
     );
+
+    this.pokedexData = this.pokedexDataService.getPokemons();
+    console.log('pokedexData on init', this.pokedexData);
   }
 
   displayFn(user: PokemonSearch): string {
@@ -57,6 +65,15 @@ export class SearchComponent implements OnInit {
       this.validSearch = true;
     } 
     else alert('O campo de busca está inválido!')
+  }
+
+  onClickAddPokemon(pokemon: string){
+    console.log(pokemon);
+    this.pokedexDataService.addPokemon(pokemon)
+    console.log('pokedexData on click', this.pokedexData);
+    let duracao = 5;
+    this._snackBar.open(pokemon + " foi adicionado com sucesso!", "Ok");
+    
   }
 
 }
