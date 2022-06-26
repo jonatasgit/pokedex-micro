@@ -2,6 +2,10 @@
 
 https://www.figma.com/file/ONLb591eGFliA3x9QrUroM/UTFPR---Angular-Frameworks?node-id=0%3A1
 
+# Hospedagem GIT HUB PAGES
+
+https://jonatasgit.github.io/pokedex-micro/
+
 # Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
